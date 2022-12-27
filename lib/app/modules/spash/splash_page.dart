@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:foodie/app/core/ui/extensions/size_screen_extension.dart';
 
 class SplashPage extends StatelessWidget {
@@ -22,18 +23,18 @@ class SplashPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
-                  'Good Food Is What We ',
-                  style: TextStyle(
+                  AppLocalizations.of(context)!.splashTextPartOne,
+                  style: const TextStyle(
                     color: Color(0xFF505050),
                     fontWeight: FontWeight.w500,
                     fontSize: 16,
                   ),
                 ),
                 Text(
-                  'Deliver',
-                  style: TextStyle(
+                  AppLocalizations.of(context)!.splashTextPartTwo,
+                  style: const TextStyle(
                     color: Color(0xFFEE555A),
                     fontWeight: FontWeight.w400,
                     fontSize: 16,
