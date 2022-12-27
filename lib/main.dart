@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/app/modules/spash/splash_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Foodie - Food Delivery App',
+      theme: ThemeData(fontFamily: 'NotoSans'),
       debugShowCheckedModeBanner: false,
-      home: Container(color: Colors.white),
+      home: const SplashPage(),
     );
   }
 }
