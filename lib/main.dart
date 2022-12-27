@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodie/app/modules/spash/splash_page.dart';
+import 'package:foodie/app/app_widget.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Foodie - Food Delivery App',
-      theme: ThemeData(fontFamily: 'NotoSans'),
-      debugShowCheckedModeBanner: false,
-      home: const SplashPage(),
-    );
-  }
+  runApp(const AppWidget());
 }
