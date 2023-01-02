@@ -1,4 +1,13 @@
 {
 	"splashTextPartOne": "Comida Boa É O Que ",
-	"splashTextPartTwo": "Entregamos"
+	"splashTextPartTwo": "Entregamos",
+	"skipText": "Pular",
+	"nextText": "Próximo",
+	"getExploreText": "Vá Explorar!",
+	"introOneTextTitle": "Faça Pedidos Em Vários Restaurantes",
+	"introOneTextSubtitle": "Nós fornecemos serviços de uma ampla variedade de mais de 10.000 restaurantes.",
+	"introTwoTextTitle": "Encontre A Rota Mais Rápida Até Sua Porta",
+	"introTwoTextSubtitle": "Nós fornecemos facilidade para entrega rápida à sua porta.",
+	"introThreeTextTitle": "O Delivery De Comida Mais Rápido Para Você!",
+	"introThreeTextSubtitle": "Peça agora e receba em 30 minutos ou menos."
 }
