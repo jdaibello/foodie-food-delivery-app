@@ -36,7 +36,7 @@ class _SplashPageState extends State<SplashPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/logo.png',
+              'assets/images/logo_text.png',
               width: 152.w,
               height: 156.h,
               fit: BoxFit.fill,

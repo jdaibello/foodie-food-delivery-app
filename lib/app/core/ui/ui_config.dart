@@ -19,5 +19,20 @@ class UIConfig {
           bodyColor: const Color(0xFFE5E5E5),
           displayColor: const Color(0xFFE5E5E5),
         ),
+        inputDecorationTheme: const InputDecorationTheme(
+          prefixIconColor: Color(0xFFF55D61),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              width: 1,
+              color: Color(0xFFE2E2E2),
+            ),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              width: 1,
+              color: Color(0xFFF55D61),
+            ),
+          ),
+        ),
       );
 }
