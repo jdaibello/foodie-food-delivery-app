@@ -18,7 +18,7 @@ class StepTwo extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (_) => const AuthPage(),
+                    builder: (_) => AuthPage(),
                   ),
                 );
               },

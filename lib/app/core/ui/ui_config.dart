@@ -34,5 +34,8 @@ class UIConfig {
             ),
           ),
         ),
+        textSelectionTheme: const TextSelectionThemeData(
+          cursorColor: Color(0xFFF55D61),
+        ),
       );
 }

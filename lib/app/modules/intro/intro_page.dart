@@ -67,7 +67,7 @@ class _IntroPageState extends State<IntroPage> {
                 if (selectedPage == 2) {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (_) => const AuthPage(),
+                      builder: (_) => AuthPage(),
                     ),
                   );
                 } else {

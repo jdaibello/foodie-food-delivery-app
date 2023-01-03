@@ -1,50 +1,107 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/app/modules/auth/login/login_form.dart';
+import 'package:foodie/app/modules/auth/register/register_form.dart';
+
+enum AuthMethodSelected { SIGN_IN, SIGN_UP }
 
 class AuthPage extends StatelessWidget {
-  const AuthPage({Key? key}) : super(key: key);
+  final AuthMethodSelected authMethod;
+  final ValueNotifier<AuthMethodSelected> _authMethodVN;
+
+  AuthPage({this.authMethod = AuthMethodSelected.SIGN_IN, Key? key})
+      : _authMethodVN = ValueNotifier<AuthMethodSelected>(authMethod),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 70 + kToolbarHeight),
-              child: Image.asset(
-                'assets/images/logo.png',
-                alignment: Alignment.center,
-                fit: BoxFit.fill,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 70 + kToolbarHeight),
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  alignment: Alignment.center,
+                  fit: BoxFit.fill,
+                ),
               ),
-            ),
-            const SizedBox(height: 8),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    backgroundColor: Colors.transparent,
-                    shadowColor: Colors.transparent,
-                  ),
-                  child: const Text('Login'),
-                ),
-                const SizedBox(width: 8),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.zero,
-                    backgroundColor: Colors.transparent,
-                    shadowColor: Colors.transparent,
-                  ),
-                  child: const Text('Register'),
-                ),
-              ],
-            ),
-            const LoginForm(),
-          ],
+              const SizedBox(height: 8),
+              ValueListenableBuilder(
+                valueListenable: _authMethodVN,
+                builder: (_, authMethodValue, __) {
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          authMethodValue = AuthMethodSelected.SIGN_IN;
+                          _authMethodVN.value = authMethodValue;
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          backgroundColor: Colors.transparent,
+                          shadowColor: Colors.transparent,
+                        ),
+                        child: Text(
+                          'Login',
+                          style: authMethodValue == AuthMethodSelected.SIGN_IN
+                              ? const TextStyle(
+                                  color: Color(0xFFEC5359),
+                                  fontSize: 26,
+                                  fontWeight: FontWeight.w600,
+                                )
+                              : const TextStyle(
+                                  color: Color(0xFFAAAAAA),
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      TextButton(
+                        onPressed: () {
+                          authMethodValue = AuthMethodSelected.SIGN_UP;
+                          _authMethodVN.value = authMethodValue;
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          backgroundColor: Colors.transparent,
+                          shadowColor: Colors.transparent,
+                        ),
+                        child: Text(
+                          'Register',
+                          style: authMethodValue == AuthMethodSelected.SIGN_UP
+                              ? const TextStyle(
+                                  color: Color(0xFFEC5359),
+                                  fontSize: 26,
+                                  fontWeight: FontWeight.w600,
+                                )
+                              : const TextStyle(
+                                  color: Color(0xFFAAAAAA),
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+              ValueListenableBuilder(
+                valueListenable: _authMethodVN,
+                builder: (_, authMethodValue, __) {
+                  switch (authMethodValue) {
+                    case AuthMethodSelected.SIGN_IN:
+                      return const LoginForm();
+                    case AuthMethodSelected.SIGN_UP:
+                      return const RegisterForm();
+                  }
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
