@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:foodie/app/modules/auth/login/login_form.dart';
 import 'package:foodie/app/modules/auth/register/register_form.dart';
 
@@ -8,8 +9,10 @@ class AuthPage extends StatelessWidget {
   final AuthMethodSelected authMethod;
   final ValueNotifier<AuthMethodSelected> _authMethodVN;
 
-  AuthPage({this.authMethod = AuthMethodSelected.SIGN_IN, Key? key})
-      : _authMethodVN = ValueNotifier<AuthMethodSelected>(authMethod),
+  AuthPage({
+    this.authMethod = AuthMethodSelected.SIGN_IN,
+    Key? key,
+  })  : _authMethodVN = ValueNotifier<AuthMethodSelected>(authMethod),
         super(key: key);
 
   @override
@@ -45,7 +48,7 @@ class AuthPage extends StatelessWidget {
                           shadowColor: Colors.transparent,
                         ),
                         child: Text(
-                          'Login',
+                          AppLocalizations.of(context)!.loginText,
                           style: authMethodValue == AuthMethodSelected.SIGN_IN
                               ? const TextStyle(
                                   color: Color(0xFFEC5359),
@@ -71,7 +74,7 @@ class AuthPage extends StatelessWidget {
                           shadowColor: Colors.transparent,
                         ),
                         child: Text(
-                          'Register',
+                          AppLocalizations.of(context)!.registerText,
                           style: authMethodValue == AuthMethodSelected.SIGN_UP
                               ? const TextStyle(
                                   color: Color(0xFFEC5359),
@@ -97,6 +100,86 @@ class AuthPage extends StatelessWidget {
                       return const LoginForm();
                     case AuthMethodSelected.SIGN_UP:
                       return const RegisterForm();
+                  }
+                },
+              ),
+              const SizedBox(height: 47),
+              ValueListenableBuilder(
+                valueListenable: _authMethodVN,
+                builder: (_, authMethodValue, __) {
+                  switch (authMethodValue) {
+                    case AuthMethodSelected.SIGN_IN:
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            AppLocalizations.of(context)!.newUserQuestionText,
+                            style: const TextStyle(
+                              color: Color(0xFFC0C0C0),
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              authMethodValue = AuthMethodSelected.SIGN_UP;
+                              _authMethodVN.value = authMethodValue;
+                            },
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              backgroundColor: Colors.transparent,
+                              shadowColor: Colors.transparent,
+                            ),
+                            child: Text(
+                              AppLocalizations.of(context)!.registerHereText,
+                              style: const TextStyle(
+                                color: Color(0xFFF35B5F),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                        ],
+                      );
+                    case AuthMethodSelected.SIGN_UP:
+                      return Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                AppLocalizations.of(context)!
+                                    .accountAlreadyExistsQuestionText,
+                                style: const TextStyle(
+                                  color: Color(0xFFC0C0C0),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  authMethodValue = AuthMethodSelected.SIGN_IN;
+                                  _authMethodVN.value = authMethodValue;
+                                },
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                  backgroundColor: Colors.transparent,
+                                  shadowColor: Colors.transparent,
+                                ),
+                                child: Text(
+                                  AppLocalizations.of(context)!.loginHereText,
+                                  style: const TextStyle(
+                                    color: Color(0xFFF35B5F),
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 50),
+                        ],
+                      );
                   }
                 },
               ),

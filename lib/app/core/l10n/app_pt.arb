@@ -9,5 +9,11 @@
 	"introTwoTextTitle": "Encontre A Rota Mais Rápida Até Sua Porta",
 	"introTwoTextSubtitle": "Nós fornecemos facilidade para entrega rápida à sua porta.",
 	"introThreeTextTitle": "O Delivery De Comida Mais Rápido Para Você!",
-	"introThreeTextSubtitle": "Peça agora e receba em 30 minutos ou menos."
+	"introThreeTextSubtitle": "Peça agora e receba em 30 minutos ou menos.",
+	"loginText": "Login",
+	"registerText": "Cadastro",
+	"newUserQuestionText": "Novo Usuário? ",
+	"registerHereText": "Cadastre-se Aqui",
+	"accountAlreadyExistsQuestionText": "Já Tem Uma Conta? ",
+	"loginHereText": "Faça Login Aqui"
 }

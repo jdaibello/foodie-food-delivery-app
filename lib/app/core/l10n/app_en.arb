@@ -9,5 +9,11 @@
 	"introTwoTextTitle": "Find The Fastest Route To Your Doorstep",
 	"introTwoTextSubtitle": "We provide facility for quick delivery at your doorstep.",
 	"introThreeTextTitle": "The Fastest Food Delivery For You!",
-	"introThreeTextSubtitle": "Order now and get it within 30 minutes, or less."
+	"introThreeTextSubtitle": "Order now and get it within 30 minutes, or less.",
+	"loginText": "Login",
+	"registerText": "Register",
+	"newUserQuestionText": "New User? ",
+	"registerHereText": "Register Here",
+	"accountAlreadyExistsQuestionText": "Already Have An Account? ",
+	"loginHereText": "Login Here"
 }
