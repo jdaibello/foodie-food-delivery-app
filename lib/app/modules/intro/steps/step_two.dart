@@ -31,7 +31,7 @@ class StepTwo extends StatelessWidget {
                 ),
               ),
               child: Text(
-                AppLocalizations.of(context)!.skipText,
+                AppLocalizations.of(context)!.skipBtnTxt,
                 style: const TextStyle(
                   color: Color(0xFFACACAC),
                 ),
@@ -50,7 +50,7 @@ class StepTwo extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 70),
               child: Text(
-                AppLocalizations.of(context)!.introTwoTextTitle,
+                AppLocalizations.of(context)!.introTwoTxtTitle,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 softWrap: true,
@@ -64,7 +64,7 @@ class StepTwo extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 54),
               child: Text(
-                AppLocalizations.of(context)!.introTwoTextSubtitle,
+                AppLocalizations.of(context)!.introTwoTxtSubtitle,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 softWrap: true,

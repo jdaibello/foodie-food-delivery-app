@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:foodie/app/core/ui/widgets/app_default_button.dart';
 import 'package:foodie/app/core/ui/widgets/app_default_text_form_field.dart';
 import 'package:foodie/app/modules/auth/widgets/social_auth_widget.dart';
@@ -33,26 +34,32 @@ class _LoginFormState extends State<LoginForm> {
           children: [
             AppDefaultTextFormField(
               controller: _emailEC,
-              label: 'Enter Email',
+              label: AppLocalizations.of(context)!.enterEmailTxt,
               prefixIcon: const Icon(Icons.email),
               keyboardType: TextInputType.emailAddress,
               validator: Validatorless.multiple([
-                Validatorless.required('Required email'),
-                Validatorless.email('Invalid email'),
+                Validatorless.required(
+                  AppLocalizations.of(context)!.requiredEmailTxt,
+                ),
+                Validatorless.email(
+                  AppLocalizations.of(context)!.invalidEmailTxt,
+                ),
               ]),
             ),
             const SizedBox(height: 5),
             AppDefaultTextFormField(
               controller: _passwordEC,
-              label: 'Enter Password',
+              label: AppLocalizations.of(context)!.enterPasswordTxt,
               prefixIcon: const Icon(Icons.lock),
               keyboardType: TextInputType.visiblePassword,
               obscureText: true,
               validator: Validatorless.multiple([
-                Validatorless.required('Required password'),
+                Validatorless.required(
+                  AppLocalizations.of(context)!.requiredPasswordTxt,
+                ),
                 Validatorless.min(
                   8,
-                  'Password must contain at least 8 characters',
+                  AppLocalizations.of(context)!.weakPasswordTxt,
                 ),
               ]),
             ),
@@ -66,9 +73,9 @@ class _LoginFormState extends State<LoginForm> {
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
                 ),
-                child: const Text(
-                  'Forgot Password?',
-                  style: TextStyle(
+                child: Text(
+                  AppLocalizations.of(context)!.forgotPasswordTxt,
+                  style: const TextStyle(
                     color: Color(0xFF666666),
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
@@ -77,13 +84,13 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ),
             const SizedBox(height: 40),
-            const Padding(
-              padding: EdgeInsets.only(left: 15, right: 25),
+            Padding(
+              padding: const EdgeInsets.only(left: 15, right: 25),
               child: Text(
-                'By clicking on Login you accept the privacy and policy terms.',
+                AppLocalizations.of(context)!.privacyAndPoliceRegisterTxt,
                 maxLines: 2,
                 softWrap: true,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color(0xFF707070),
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
@@ -98,12 +105,12 @@ class _LoginFormState extends State<LoginForm> {
                   debugPrint('Redirect to Home Page');
                 }
               },
-              label: 'Login',
+              label: AppLocalizations.of(context)!.loginTxt,
             ),
             const SizedBox(height: 30),
-            const Text(
-              'OR, login with',
-              style: TextStyle(
+            Text(
+              AppLocalizations.of(context)!.socialLoginTxt,
+              style: const TextStyle(
                 color: Color(0xFFAAAAAA),
                 fontSize: 14,
                 fontWeight: FontWeight.w400,

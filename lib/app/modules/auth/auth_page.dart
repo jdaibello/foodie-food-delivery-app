@@ -48,7 +48,7 @@ class AuthPage extends StatelessWidget {
                           shadowColor: Colors.transparent,
                         ),
                         child: Text(
-                          AppLocalizations.of(context)!.loginText,
+                          AppLocalizations.of(context)!.loginTxt,
                           style: authMethodValue == AuthMethodSelected.SIGN_IN
                               ? const TextStyle(
                                   color: Color(0xFFEC5359),
@@ -74,7 +74,7 @@ class AuthPage extends StatelessWidget {
                           shadowColor: Colors.transparent,
                         ),
                         child: Text(
-                          AppLocalizations.of(context)!.registerText,
+                          AppLocalizations.of(context)!.registerAuthTxt,
                           style: authMethodValue == AuthMethodSelected.SIGN_UP
                               ? const TextStyle(
                                   color: Color(0xFFEC5359),
@@ -113,7 +113,7 @@ class AuthPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            AppLocalizations.of(context)!.newUserQuestionText,
+                            AppLocalizations.of(context)!.newUserQuestionTxt,
                             style: const TextStyle(
                               color: Color(0xFFC0C0C0),
                               fontSize: 14,
@@ -131,7 +131,7 @@ class AuthPage extends StatelessWidget {
                               shadowColor: Colors.transparent,
                             ),
                             child: Text(
-                              AppLocalizations.of(context)!.registerHereText,
+                              AppLocalizations.of(context)!.registerHereTxt,
                               style: const TextStyle(
                                 color: Color(0xFFF35B5F),
                                 fontSize: 12,
@@ -149,7 +149,7 @@ class AuthPage extends StatelessWidget {
                             children: [
                               Text(
                                 AppLocalizations.of(context)!
-                                    .accountAlreadyExistsQuestionText,
+                                    .accountAlreadyExistsQuestionTxt,
                                 style: const TextStyle(
                                   color: Color(0xFFC0C0C0),
                                   fontSize: 14,
@@ -167,7 +167,7 @@ class AuthPage extends StatelessWidget {
                                   shadowColor: Colors.transparent,
                                 ),
                                 child: Text(
-                                  AppLocalizations.of(context)!.loginHereText,
+                                  AppLocalizations.of(context)!.loginHereTxt,
                                   style: const TextStyle(
                                     color: Color(0xFFF35B5F),
                                     fontSize: 12,

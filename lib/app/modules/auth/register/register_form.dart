@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:foodie/app/core/ui/widgets/app_default_button.dart';
 import 'package:foodie/app/core/ui/widgets/app_default_text_form_field.dart';
 import 'package:foodie/app/core/utils/app_custom_validators.dart';
@@ -42,102 +43,119 @@ class _RegisterFormState extends State<RegisterForm> {
           children: [
             AppDefaultTextFormField(
               controller: _nameEC,
-              label: 'Enter Name',
+              label: AppLocalizations.of(context)!.enterNameTxt,
               prefixIcon: const Icon(Icons.person),
               keyboardType: TextInputType.name,
               validator: Validatorless.multiple([
-                Validatorless.required('Required name'),
+                Validatorless.required(
+                  AppLocalizations.of(context)!.requiredNameTxt,
+                ),
                 Validatorless.min(
                   3,
-                  'Name must contain at least 3 characters',
+                  AppLocalizations.of(context)!.nameTooShortTxt,
                 ),
               ]),
             ),
             const SizedBox(height: 5),
             AppDefaultTextFormField(
               controller: _usernameEC,
-              label: 'Enter Username',
+              label: AppLocalizations.of(context)!.enterUsernameTxt,
               prefixIcon: const Icon(Icons.person),
               validator: Validatorless.multiple([
-                Validatorless.required('Required username'),
-                Validatorless.onlyCharacters('Only characters are allowed'),
+                Validatorless.required(
+                  AppLocalizations.of(context)!.requiredUsernameTxt,
+                ),
+                Validatorless.onlyCharacters(
+                  AppLocalizations.of(context)!.onlyCharactersUsernameTxt,
+                ),
                 Validatorless.min(
                   6,
-                  'Username must contain at least 6 characters',
+                  AppLocalizations.of(context)!.usernameTooShortTxt,
                 ),
               ]),
             ),
             const SizedBox(height: 5),
             AppDefaultTextFormField(
               controller: _phoneNumberEC,
-              label: 'Enter Phone Number',
+              label: AppLocalizations.of(context)!.enterPhoneNumberTxt,
               prefixIcon: const Icon(Icons.phone),
               keyboardType: TextInputType.phone,
               validator: Validatorless.multiple([
-                Validatorless.required('Required phone number'),
+                Validatorless.required(
+                  AppLocalizations.of(context)!.requiredPhoneNumberTxt,
+                ),
                 Validatorless.min(
                   11,
-                  'Phone number must contain at least 11 digits',
+                  AppLocalizations.of(context)!.phoneNumberTooShortTxt,
                 ),
                 Validatorless.max(
                   12,
-                  'Phone number must contain at least 12 digits',
+                  AppLocalizations.of(context)!.phoneNumberTooLongTxt,
                 ),
               ]),
             ),
             const SizedBox(height: 5),
             AppDefaultTextFormField(
               controller: _emailEC,
-              label: 'Enter Email',
+              label: AppLocalizations.of(context)!.enterEmailTxt,
               prefixIcon: const Icon(Icons.email),
               keyboardType: TextInputType.emailAddress,
               validator: Validatorless.multiple([
-                Validatorless.required('Required email'),
-                Validatorless.email('Invalid email'),
+                Validatorless.required(
+                  AppLocalizations.of(context)!.requiredEmailTxt,
+                ),
+                Validatorless.email(
+                  AppLocalizations.of(context)!.invalidEmailTxt,
+                ),
               ]),
             ),
             const SizedBox(height: 5),
             AppDefaultTextFormField(
               controller: _passwordEC,
-              label: 'Enter Password',
+              label: AppLocalizations.of(context)!.enterPasswordTxt,
               prefixIcon: const Icon(Icons.lock),
               keyboardType: TextInputType.visiblePassword,
               obscureText: true,
               validator: Validatorless.multiple([
-                Validatorless.required('Required password'),
+                Validatorless.required(
+                  AppLocalizations.of(context)!.requiredPasswordTxt,
+                ),
                 Validatorless.min(
                   8,
-                  'Password must contain at least 8 characters',
+                  AppLocalizations.of(context)!.weakPasswordTxt,
                 ),
               ]),
             ),
             const SizedBox(height: 5),
             AppDefaultTextFormField(
               controller: _confirmPasswordEC,
-              label: 'Confirm Password',
+              label: AppLocalizations.of(context)!.enterConfirmPasswordTxt,
               prefixIcon: const Icon(Icons.lock),
               keyboardType: TextInputType.visiblePassword,
               obscureText: true,
               validator: Validatorless.multiple([
-                Validatorless.required('Required confirm password'),
+                Validatorless.required(
+                  AppLocalizations.of(context)!.requiredConfirmPasswordTxt,
+                ),
                 Validatorless.min(
                   8,
-                  'Confirm password must contain at least 8 characters',
+                  AppLocalizations.of(context)!.weakConfirmPasswordTxt,
                 ),
                 AppCustomValidators.compare(
                   _passwordEC,
-                  'Password and Confirm password must be equals',
+                  AppLocalizations.of(context)!
+                      .passwordAndConfirmPasswordNotEqualTxt,
                 ),
               ]),
             ),
             const SizedBox(height: 40),
-            const Padding(
-              padding: EdgeInsets.only(left: 15, right: 25),
+            Padding(
+              padding: const EdgeInsets.only(left: 15, right: 25),
               child: Text(
-                'By clicking on Login you accept the privacy and policy terms.',
+                AppLocalizations.of(context)!.privacyAndPoliceLoginTxt,
                 maxLines: 2,
                 softWrap: true,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Color(0xFF707070),
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
@@ -152,12 +170,12 @@ class _RegisterFormState extends State<RegisterForm> {
                   debugPrint('Redirect to Home Page');
                 }
               },
-              label: 'Register',
+              label: AppLocalizations.of(context)!.registerFormTxt,
             ),
             const SizedBox(height: 30),
-            const Text(
-              'OR, register with',
-              style: TextStyle(
+            Text(
+              AppLocalizations.of(context)!.socialRegisterTxt,
+              style: const TextStyle(
                 color: Color(0xFFAAAAAA),
                 fontSize: 14,
                 fontWeight: FontWeight.w400,

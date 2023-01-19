@@ -75,8 +75,8 @@ class _IntroPageState extends State<IntroPage> {
                 }
               },
               label: selectedPage == 2
-                  ? AppLocalizations.of(context)!.getExploreText
-                  : AppLocalizations.of(context)!.nextText,
+                  ? AppLocalizations.of(context)!.getExploreBtnTxt
+                  : AppLocalizations.of(context)!.nextBtnTxt,
             ),
           ),
         ],

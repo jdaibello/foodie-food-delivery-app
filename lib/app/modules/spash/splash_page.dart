@@ -47,7 +47,7 @@ class _SplashPageState extends State<SplashPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  AppLocalizations.of(context)!.splashTextPartOne,
+                  AppLocalizations.of(context)!.splashTxtPartOne,
                   style: const TextStyle(
                     color: Color(0xFF505050),
                     fontWeight: FontWeight.w500,
@@ -55,7 +55,7 @@ class _SplashPageState extends State<SplashPage> {
                   ),
                 ),
                 Text(
-                  AppLocalizations.of(context)!.splashTextPartTwo,
+                  AppLocalizations.of(context)!.splashTxtPartTwo,
                   style: const TextStyle(
                     color: Color(0xFFEE555A),
                     fontWeight: FontWeight.w400,

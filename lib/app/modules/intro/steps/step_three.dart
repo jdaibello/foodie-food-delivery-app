@@ -21,7 +21,7 @@ class StepThree extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 70),
               child: Text(
-                AppLocalizations.of(context)!.introThreeTextTitle,
+                AppLocalizations.of(context)!.introThreeTxtTitle,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 softWrap: true,
@@ -35,7 +35,7 @@ class StepThree extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 54),
               child: Text(
-                AppLocalizations.of(context)!.introThreeTextSubtitle,
+                AppLocalizations.of(context)!.introThreeTxtSubtitle,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 softWrap: true,
